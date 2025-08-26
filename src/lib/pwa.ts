@@ -58,7 +58,7 @@ export const subscribeToPushNotifications = async (
       applicationServerKey: urlBase64ToUint8Array(
         // This should be your VAPID public key in production
         'BEl62iUYgUivxIkv69yViEuiBIa40HI80NqIuyJgGTALHAT2Tw8KY1FsFFAn4fZBB3i7oKQsWFIQByH9UGhpNQ'
-      )
+      ) as BufferSource
     })
     console.log('User is subscribed:', subscription)
     return subscription

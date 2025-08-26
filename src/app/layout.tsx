@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import "react-grid-layout/css/styles.css";
@@ -64,9 +64,15 @@ export const metadata: Metadata = {
     apple: [
       { url: "/icon-152x152.png", sizes: "152x152", type: "image/png" }
     ]
-  },
-  themeColor: "#3b82f6",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+  }
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: "#3b82f6"
 };
 
 export default function RootLayout({

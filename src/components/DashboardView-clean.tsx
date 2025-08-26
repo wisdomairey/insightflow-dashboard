@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useMemo, useRef, useEffect } from 'react'
-import { Download, Filter, BarChart3, LineChart, PieChart, Table, TrendingUp, Users, DollarSign, Activity, Calendar, ChevronDown } from 'lucide-react'
+import { useState, useMemo } from 'react'
+import { Download, Filter, BarChart3, Table, TrendingUp, Users, DollarSign, Activity } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
@@ -28,16 +28,22 @@ export function DashboardView() {
       metrics: mockData.metrics,
       revenueData: mockData.revenue.slice(-days),
       userChannels: mockData.userChannels,
-      salesData: mockData.sales
+      salesData: mockData.salesCategories
     }
   }, [selectedDateRange])
 
   const handleExport = () => {
-    addToast('Data exported successfully!', 'success')
+    addToast({
+      type: 'success',
+      title: 'Data exported successfully!'
+    })
   }
 
   const handleFilter = () => {
-    addToast('Filters applied', 'info')
+    addToast({
+      type: 'info',
+      title: 'Filters applied'
+    })
   }
 
   const renderOverviewContent = () => (

@@ -197,7 +197,7 @@ export function ExportModal({
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label className="text-sm text-gray-900 dark:text-gray-100">Frequency</Label>
-                    <Select value={schedule} onValueChange={(value: 'daily' | 'weekly' | 'monthly') => setSchedule(value)}>
+                    <Select value={schedule} onValueChange={(value) => setSchedule(value as 'daily' | 'weekly' | 'monthly')}>
                       <SelectTrigger className="border-gray-300 dark:border-gray-600">
                         <SelectValue />
                       </SelectTrigger>
